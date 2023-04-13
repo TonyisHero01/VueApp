@@ -1,9 +1,6 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
+import { createStore } from 'vuex';
 
-Vue.use(Vuex);
-
-export let store = new Vuex.Store({
+export let store = createStore({
   state: {
     total: 0
   },
@@ -21,8 +18,8 @@ export let store = new Vuex.Store({
     }
   },
   actions: {
-    increase (context, price) {
-      context.commit('increment', price)
+    increase (context) {
+      context.commit('increment')
     }
   }
 });

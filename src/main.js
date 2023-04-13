@@ -1,23 +1,14 @@
-/*
 import { createApp } from 'vue'
 import App from './App.vue'
-import './index.css'
-import Vuex from 'vuex'
+import vuetify from './plugins/vuetify'
+import { loadFonts } from './plugins/webfontloader'
+import { store } from './store/store'
+import router from './router'
 
-createApp(App).mount('#app')
-Vue.use(Vuex)
-*/
+loadFonts()
 
-
-
-import Vue from 'vue';
-import App from './App.vue';
-import { store } from './store/store';
-
-Vue.config.productionTip = false;
-
-new Vue({
-  el: '#app',
-  store: store,
-  render: h => h(App)
-});
+createApp(App)
+  .use(vuetify)
+  .use(store)
+  .use(router)
+  .mount('#app')
